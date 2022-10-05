@@ -10,16 +10,11 @@ import java.util.List;
 @Entity
 public class Skill extends AbstractEntity {
     @NotNull
-    @Size(min = 3, max = 300, message = "Description should be less than 3000 characters.")
+    @Size(min = 3, max = 500, message = "Description should be less than 3000 characters.")
     private String description;
 
     @ManyToMany(mappedBy = "skills")
-    private List<Job> jobs = new ArrayList<>();
-
-    public Skill(String description) {
-        this.description = description;
-    }
-
+    private final  List<Job> jobs = new ArrayList<>();
 
     public Skill() {}
 
@@ -34,8 +29,5 @@ public class Skill extends AbstractEntity {
         return jobs;
     }
 
-    //    Do we need to be able to add jobs?
-//    public void addJob(Job job) {
-//        this.jobs.add(job);
-//    }
+
 }
