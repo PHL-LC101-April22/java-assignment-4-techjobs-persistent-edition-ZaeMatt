@@ -8,7 +8,7 @@ import java.util.List;
 public class Job extends AbstractEntity {
 
     @ManyToOne
-    private Object employer;
+    private Employer employer;
 
 
     @ManyToMany
@@ -25,11 +25,11 @@ public class Job extends AbstractEntity {
 
     // Getters and setters.
 
-    public Object getEmployer() {
+    public Employer getEmployer() {
         return employer;
     }
 
-    public void setEmployer(Object employer) {
+    public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
